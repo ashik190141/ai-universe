@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Universe Hub</title>
+    <script src="https://kit.fontawesome.com/edda25d231.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .pricing{
+            background: #FFFFFF;
+            border-radius: 16px;
+        }
+        .modalDes{
+            background: rgba(235, 87, 87, 0.05);
+            border: 1px solid #EB5757;
+            border-radius: 16px;
+            padding: 20px;
+        }
+        .accurate{
+            position: absolute;
+            top: 10%;
+            right: 10%;
+        }
+        .closingBtn{
+            background-color: #f90303;
+            border-radius: 50%;
+            position: absolute;
+            top: -1%;
+            right: -1%;
+        }
+        .divSize{
+            height: 110px;
+        }
+    </style>
+</head>
+<body>
+    <header class="d-flex flex-column gap-3 justify-content-center align-items-center mt-5 mb-5">
+        <h3>AI Universe Hub</h3>
+        <button class="btn btn-danger" id="sortDate">Sort By Date</button>
+    </header>
+    <main class="container">
+        <section>
+            <div class="row row-cols-1 row-cols-md-3 g-4 mb-5" id="ai_container">
+                
+            </div>
+            <div class="d-none text-center pb-5 mt-5" id="showAll">
+                <div class="btn btn-primary" id="showAll-btn">See More</div>
+            </div>
+        </section>
+        <section class="d-none" id="loader">
+            <div class="d-flex justify-content-center align-items-center" style="height:400px">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
+        <section>
+            <!-- Button trigger modal -->
+        
+        
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="btn-close closingBtn" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row p-3">
+                                <div class="col-12 col-md-6 modalDes">
+                                    <h6 style="text-align: justify;" id="description" class="mb-5 mt-3"></h6>
+                                    <div class="mb-5">
+                                        <div class="row p-2 g-3">
+                                            <div class="col-12 col-md-4 d-none text-success pricing text-center" id="basicDiv">
+                                                <h6 class="mt-2"><span id="basic"></span><br> Basic</h6>
+                                            </div>
+                                            <div class="col-12 col-md-4 d-none text-success pricing text-center" id="basicFree">
+                                                <h6 class="mt-2" id="freeBasic">Free of <br>cost/basic</h6>
+                                            </div>
+                                            <div class="col-12 col-md-4 d-none pricing text-center" id="proDiv" style="color:#F28927 ;">
+                                                <h6 class="mt-2"><span id="pro"></span><br> pro</h6>
+                                            </div>
+                                            <div class="col-12 col-md-4 d-none pricing text-center" id="proFree" style="color:#F28927 ;">
+                                                <h6 class="mt-2" id="freePro">Free of <br>cost/pro</h6>
+                                            </div>
+                                            <div class="col-12 col-md-4 d-none text-danger pricing text-center" id="contact">
+                                                <h6 class="mt-2" id="enterprise">Contact us <br>Enterprise</h6>
+                                            </div>
+                                            <div class="col-12 col-md-4 d-none text-danger pricing text-center" id="notContact">
+                                                <h6 class="mt-2" id="freeEnterprise">Free of <br>cost/Enterprise</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="row">
+                                            <div class="col-12 col-md-6">
+                                                <h4 class="mb-3">Features</h4>
+                                                <div id="features">
+
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-6">
+                                                <h4 class="mb-3">Integrations</h4>
+                                                <div id="integrations">
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="card" style="border-radius: 16px;width:100%;">
+                                        <div id="imgSite">
+                                            
+                                        </div>
+                                        <div class="card-body">
+                                            <h5 class="card-text text-center" id="input"></h5>
+                                            <p class="card-text text-center" id="output"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="bootstrap.min.js"></script>
+    <script src="ai.js"></script>
+</body>
+</html>
